@@ -1,3 +1,9 @@
-from django.contrib import admin
+from django.contrib.gis import admin
+from .models import Incidences
 
-# Register your models here.
+
+class IncidentesAdmin(admin.ModelAdmin): #Para listar de forma ordenada en el admin
+    list_display = ['name', 'descripcion']
+
+
+admin.site.register(Incidences, IncidentesAdmin)
