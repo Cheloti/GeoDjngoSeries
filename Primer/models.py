@@ -6,7 +6,7 @@ from django.contrib.gis.db import models
 class Incidences(models.Model):
     name = models.CharField(max_length=20)
     descripcion = models.CharField(max_length=210)
-    punto = models.PointField()
+    ubicacion = models.PointField(srid=4326)
     object = models.GeoManager()
 
     def __str__(self):
