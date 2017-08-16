@@ -55,7 +55,7 @@ ROOT_URLCONF = 'GeoDjngoSeries.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +121,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': (-13.16024, -74.22559),
+    'DEFAULT_ZOOM': 15,
+    'MIN_ZOOM': 8,
+    'MAX_ZOOM': 20,
+    'ATTRIBUTION_PREFIX': 'Diseñado por FMJG'
+}

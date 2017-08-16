@@ -1,7 +1,7 @@
 from leaflet.admin import LeafletGeoAdmin
 from django.contrib import admin
 # from django.contrib.gis.db import OSMGeoAdmin
-from .models import Incidences
+from .models import *
 
 """
 class IncidentesAdmin(LeafletGeoAdmin):  # Para listar de forma ordenada en el admin
@@ -9,3 +9,4 @@ class IncidentesAdmin(LeafletGeoAdmin):  # Para listar de forma ordenada en el a
 """
 
 admin.site.register(Incidences, LeafletGeoAdmin)
+admin.site.register(Sector, LeafletGeoAdmin)
