@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load leaflet_tags %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% leaflet_js %}
+    {% leaflet_css %}
+
+    <title>Saludos terricolas</title>
+    <script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}"></script>
+</head>
+<body>
+<h3>WE ARE HEROES !!!</h3>
+<br>
+<style>
+    #primermapa {
+        width: 90%;
+        height: 700px;
+    }
+</style>
+<script type="text/javascript">
+    function our_layers(map, options) {
+        var datasets = new L.GeoJSON.AJAX("{% url 'primer:sectoressbd' %}", {});
+        //datasets.addTo(map);
+        datasets.addTo(map);
+    }
+</script>
+{% leaflet_map 'primermapa' callback="window.our_layers" %}
+</body>
+</html>
