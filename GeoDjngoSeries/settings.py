@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.C ommonMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -127,5 +127,5 @@ LEAFLET_CONFIG = {
     'DEFAULT_ZOOM': 15,
     'MIN_ZOOM': 8,
     'MAX_ZOOM': 20,
-    'ATTRIBUTION_PREFIX': 'Diseñado por FMJG'
+    'ATTRIBUTION_PREFIX': 'Diseñado por FMJG',
 }

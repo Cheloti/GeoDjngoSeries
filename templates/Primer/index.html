@@ -19,12 +19,22 @@
         height: 700px;
     }
 </style>
-<script type="text/javascript">
+<script type="application/javascript">
     function our_layers(map, options) {
-        var datasets = new L.GeoJSON.AJAX("{% url 'primer:sectoressbd' %}", {});
+        var datasets = new L.GeoJSON.AJAX("{% url 'primer:sectoressbd' %}", {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup("<h3> este es el primer pum "
+                    + feature.properties.nombre.toString() + "</h3><br>" +
+                    "<input type='text' id='conquillas'/><br>" +
+                    "<input type='submit' />");
+                //layer.bindPopup('hola carajo'feature.properties.nombre.toString());
+            }
+        });
         //datasets.addTo(map);
+        //console.log(datasets);
+
         datasets.addTo(map);
-    }
+    };
 </script>
 {% leaflet_map 'primermapa' callback="window.our_layers" %}
 </body>
