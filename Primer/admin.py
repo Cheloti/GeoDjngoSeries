@@ -10,3 +10,5 @@ class IncidentesAdmin(LeafletGeoAdmin):  # Para listar de forma ordenada en el a
 
 admin.site.register(Incidences, LeafletGeoAdmin)
 admin.site.register(Sector, LeafletGeoAdmin)
+admin.site.register(Lineas, LeafletGeoAdmin)
+admin.site.register(Multipunt, LeafletGeoAdmin)

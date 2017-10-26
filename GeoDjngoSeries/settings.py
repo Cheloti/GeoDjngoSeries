@@ -78,7 +78,7 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'Geodb3',
         'USER': 'postgres',
-        'PASSWORD': 'bazinga',
+        'PASSWORD': 'nomejodas',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -120,7 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
 LEAFLET_CONFIG = {
     'DEFAULT_CENTER': (-13.16024, -74.22559),

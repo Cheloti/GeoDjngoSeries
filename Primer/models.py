@@ -19,3 +19,19 @@ class Sector(models.Model):
 
     def __str__(self):
         return self.nombre
+
+
+class Lineas(models.Model):
+    nombre = models.CharField(max_length=80)
+    ubicacion = models.LineStringField(srid=4326)
+
+    def __str__(self):
+        return self.nombre
+
+
+class Multipunt(models.Model):
+    nombre = models.CharField(max_length=80)
+    ubicacion = models.MultiPointField(srid=4326)
+
+    def __str__(self):
+        return self.nombre
