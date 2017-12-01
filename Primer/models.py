@@ -35,3 +35,22 @@ class Multipunt(models.Model):
 
     def __str__(self):
         return self.nombre
+
+
+# DELITO,DIRECCION,CANTIDAD,ZONA,SUB ZONA,SUB ZONA 1,SUB ZONA 2,MES,SUBURB
+class DelitosMuni(models.Model):
+    delito = models.CharField(max_length=100, blank=True, null=True)
+    direccion = models.CharField(max_length=100, blank=True, null=True)
+    cantidad = models.IntegerField(blank=True, null=True)
+    zona = models.CharField(max_length=5, blank=True, null=True)
+    subzona = models.CharField(max_length=5, blank=True, null=True)
+    subzona1 = models.CharField(max_length=5, blank=True, null=True)
+    subzona2 = models.CharField(max_length=5, blank=True, null=True)
+    mes = models.DateField()
+    punto = models.PointField(srid=4326, blank=True, null=True)
+    lat = models.FloatField(blank=True, null=True)
+    lng = models.FloatField(blank=True, null=True)
+    object = models.GeoManager()
+
+    def __str__(self):
+        return self.direccion + " " + self.delito

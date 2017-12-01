@@ -10,5 +10,10 @@ class index(TemplateView):
 
 
 def sectores(request):
-    sector = serialize('geojson', models.Sector.objects.all())
-    return HttpResponse(sector, content_type='json')
+    obj = serialize('geojson', models.Incidences.object.all())
+    return HttpResponse(obj, content_type='json')
+
+
+def mencionar():
+    print('bainga')
+    return 'hiohohoho'

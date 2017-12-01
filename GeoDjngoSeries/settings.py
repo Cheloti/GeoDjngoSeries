@@ -78,7 +78,7 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'Geodb3',
         'USER': 'postgres',
-        'PASSWORD': 'nomejodas',
+        'PASSWORD': 'alamierda',
         'HOST': 'localhost',
         'PORT': '5432',
     }
