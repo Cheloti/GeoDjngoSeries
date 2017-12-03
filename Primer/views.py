@@ -4,7 +4,6 @@ from django.core.serializers import serialize
 from django.http import HttpResponse
 from io import open
 from Primer.models import DelitosMuni, Prueba
-from . import models
 import csv
 from geopy import Nominatim
 from datetime import date
