@@ -11,7 +11,7 @@ from django.contrib.gis.geos import GEOSGeometry
 import os
 from django.conf import settings
 
-path = os.path.join(settings.BASE_DIR, 'static/inc2.csv')
+path = os.path.join(settings.BASE_DIR, 'static/final.csv')
 
 
 class index(TemplateView):
