@@ -70,15 +70,16 @@ def mencionar(request):
 
 
 def prueba(request):
-    for i in DelitosMuni.objects.all():
-        if Tipicidad.objects.get(nombre=i.delito):
-            pass
-        else:
+    for i in DelitosMuni.object.all():
+        try:
+            j = Tipicidad.objects.get(nombre__exact=i.delito)
+        except Exception:
             tipo = Tipicidad(nombre=i.delito)
-            tipo.save()
-            i.idfalso = int(tipo.id)
-            i.save()
+            j = tipo.save()
+
+        i.idfalso = int(j.id)
+        i.save()
 
     return render(request, 'Primer/resultado.html',
-                  {'muni2': DelitosMuni.object.all(),
+                  {'muni2': DelitosMuni.object.all().order_by(),
                    'tipo': Tipicidad.objects.all()})
