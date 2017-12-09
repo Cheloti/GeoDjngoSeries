@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.core.serializers import serialize
 from django.http import HttpResponse
 from io import open
-from Primer.models import DelitosMuni, Prueba
+from Primer.models import DelitosMuni, Prueba, Tipicidad
 import csv
 from geopy import Nominatim
 from datetime import date
@@ -69,7 +69,16 @@ def mencionar(request):
                    'conrefe': DelitosMuni.object.filter(referenciado=True)})
 
 
-def prueba():
-    delito = DelitosMuni.object.filter(referenciado=False).order_by('direccion')
-    for i in delito:
-        print(i.direccion)
+def prueba(request):
+    for i in DelitosMuni.objects.all():
+        if Tipicidad.objects.get(nombre=i.delito):
+            pass
+        else:
+            tipo = Tipicidad(nombre=i.delito)
+            tipo.save()
+            i.idfalso = int(tipo.id)
+            i.save()
+
+    return render(request, 'Primer/resultado.html',
+                  {'muni2': DelitosMuni.object.all(),
+                   'tipo': Tipicidad.objects.all()})
