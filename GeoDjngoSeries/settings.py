@@ -124,7 +124,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 LEAFLET_CONFIG = {
     'DEFAULT_CENTER': (-13.16024, -74.22559),
     'DEFAULT_ZOOM': 15,
-    'MIN_ZOOM': 8,
+    'MIN_ZOOM': 2,
     'MAX_ZOOM': 20,
     'ATTRIBUTION_PREFIX': 'Diseñado por FMJG',
 }
